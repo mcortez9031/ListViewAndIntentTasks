@@ -12,6 +12,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.cc_listviewandintenttask.models.AndroidVersionInfo;
+
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -51,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
             androidList.add(new AndroidVersionInfo(androidVersions[8], getString(R.string.Ice_Cream_Sandwich_desc), R.drawable.icecream));
             androidList.add(new AndroidVersionInfo(androidVersions[9], getString(R.string.Jelly_Bean_desc), R.drawable.jellybean));
             androidList.add(new AndroidVersionInfo(androidVersions[10], getString(R.string.Kitkat_desc), R.drawable.kitkat));
-            androidList.add(new AndroidVersionInfo(androidVersions[11], getString(R.string.Lollipop_desc), R.drawable.lolipop));
+            androidList.add(new AndroidVersionInfo(androidVersions[11], getString(R.string.Lollipop_desc), R.drawable.lollipop));
             androidList.add(new AndroidVersionInfo(androidVersions[12], getString(R.string.Marshmallow_desc), R.drawable.marshmallow));
             androidList.add(new AndroidVersionInfo(androidVersions[13], getString(R.string.Nougat_desc), R.drawable.nougat));
             androidList.add(new AndroidVersionInfo(androidVersions[14], getString(R.string.Oreo_desc), R.drawable.oreo));
@@ -78,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
                     String description = selectedVersion.getDescription();
                     int imageID = selectedVersion.getImageResourceId();
 
-
+                    intent = new Intent(MainActivity.this, SelectedAndroidInfo.class);
                     intent.putExtra("version_name", versionName);
                     intent.putExtra("description", description);
                     intent.putExtra("version_image", imageID);
